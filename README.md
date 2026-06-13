@@ -1,45 +1,52 @@
-# Grease - Waste Cooking Oil Collection Service
+# GreaseCycle Pro ♻️
 
-## Overview
+**Free waste cooking oil collection for commercial kitchens.**
 
-Grease is a professional waste cooking oil collection and recycling service for restaurants, food production facilities, and other businesses generating waste cooking oil. We provide reliable, efficient, and environmentally responsible collection services to help businesses manage their waste while supporting sustainable practices.
+A complete lead-generation website and API for a waste cooking oil collection business. Restaurants, hotels, and food service businesses can learn about the service and submit a "Get a Quote" form, which is captured and stored via the backend API.
 
-## About Us
+## Features
 
-We specialize in:
-- **Regular collection schedules** from commercial kitchens and food production facilities
-- **Safe and compliant handling** of waste cooking oil
-- **Proper recycling and disposal** according to environmental standards
-- **Competitive pricing** for waste oil collection services
+- 📱 **Responsive website** — Mobile-first design, works on all devices
+- 🎨 **Modern branding** — Warm amber/gold + green eco-friendly palette
+- 📝 **Lead capture form** — "Get a Quote" collects name, business, email, phone, volume
+- 🔌 **REST API** — Stores leads in a SQLite database via Turso
+- 📊 **Health endpoint** — Monitor server status and lead volume
 
-## Services
+## Quick Start
 
-- On-demand collection
-- Scheduled pickup routes
-- Container provision and maintenance
-- Waste oil recycling and processing
-- Environmental compliance documentation
+```bash
+npm install
+npm start
+```
 
-## For Businesses
+The server starts on port 8080 by default (or `$PORT` if set).
 
-If your restaurant, catering facility, or food business needs professional waste cooking oil collection, contact us to:
-- Schedule a pickup
-- Learn about our service plans
-- Get pricing information
-- Understand disposal regulations in your area
+### Environment
 
-## Environmental Impact
+The app uses the shared `team-db` CLI for database access — configured as part of the CTO platform.
 
-Proper waste cooking oil management:
-- Prevents environmental contamination
-- Supports biodiesel and renewable energy production
-- Reduces landfill waste
-- Promotes sustainable business practices
+## Tech Stack
 
-## Contact Us
+- **Frontend:** HTML5, CSS3, Vanilla JavaScript
+- **Backend:** Node.js, Express
+- **Database:** Turso (SQLite via team-db CLI)
+- **Fonts:** Playfair Display + Inter (Google Fonts)
 
-For service inquiries, quotes, or more information, please reach out to our team.
+## API Endpoints
 
----
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/api/health` | Server status & lead count |
+| POST | `/api/lead` | Submit a lead (name, business, email required) |
+| GET | `/` | Frontend website |
 
-**Grease** - Turning waste into value, one collection at a time.
+## Project Structure
+
+```
+├── public/
+│   ├── index.html              # Full website
+│   └── hero-oil-collection.jpg # Hero background image
+├── server.js                   # Express API server
+├── package.json
+└── README.md
+```

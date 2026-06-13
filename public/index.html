@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreaseCycle Pro – Free Waste Cooking Oil Collection & Recycling</title>
+    <meta name="description" content="Free collection of waste cooking oil from restaurants, hotels, and food service businesses. We haul, you save — no clogs, no fines, no hassle. Schedule your pickup today.">
+    <meta name="keywords" content="waste cooking oil, collecting waste cooking oil, collecting cooking oil, recycling cooking oil, free collection of waste cooking oil, cooking oil recycling, grease disposal">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GreaseCycle Pro – Free Waste Cooking Oil Collection">
+    <meta property="og:description" content="We haul away your used cooking oil for free. Reliable, compliant, and hassle-free service for commercial kitchens.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hero-oil-collection.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #2d2b28;
+            line-height: 1.6;
+            background: #faf8f5;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== COLOR PALETTE ===== */
+        :root {
+            --amber-900: #78350f;
+            --amber-800: #92400e;
+            --amber-700: #b45309;
+            --amber-600: #d97706;
+            --amber-500: #f59e0b;
+            --amber-400: #fbbf24;
+            --amber-300: #fcd34d;
+            --amber-200: #fde68a;
+            --amber-100: #fef3c7;
+            --amber-50: #fffbeb;
+            
+            --green-900: #14532d;
+            --green-800: #166534;
+            --green-700: #15803d;
+            --green-600: #16a34a;
+            --green-500: #22c55e;
+            --green-400: #4ade80;
+            --green-100: #dcfce7;
+            --green-50: #f0fdf4;
+            
+            --cream: #fdf8ee;
+            --warm-white: #fffcf5;
+            --dark: #2d2b28;
+            --dark-soft: #4a453f;
+            --gray: #78716c;
+            --gray-light: #d6d3d1;
+            --gray-bg: #f5f3f0;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 252, 245, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(214, 211, 209, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 24px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--amber-800);
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--amber-500), var(--amber-700));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--dark-soft);
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--amber-500);
+            transform: scaleX(0);
+            transition: transform 0.2s;
+        }
+        .nav-links a:hover { color: var(--amber-700); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-cta {
+            background: var(--amber-600);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--amber-700); transform: translateY(-1px); }
+
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--dark);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(120, 53, 15, 0.85) 0%,
+                rgba(146, 64, 14, 0.75) 40%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            color: white;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 28px;
+            color: var(--amber-200);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 72px);
+            font-weight: 800;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 span { color: var(--amber-300); }
+        .hero p {
+            font-size: clamp(17px, 2.2vw, 21px);
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 36px;
+            max-width: 570px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .btn-primary {
+            background: var(--amber-500);
+            color: var(--amber-900);
+        }
+        .btn-primary:hover {
+            background: var(--amber-400);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        .hero-stat h3 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero-stat p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0;
+        }
+
+        /* ===== SECTIONS GENERAL ===== */
+        section { padding: 96px 0; }
+        .section-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--amber-700);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4.5vw, 44px);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            margin-top: 48px;
+        }
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; }
+        .about-image-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .about-image-badge span {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--dark);
+        }
+        .about-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        .about-content p {
+            color: var(--dark-soft);
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .about-value {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .about-value-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--green-100);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .about-value h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .about-value p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works { background: var(--cream); }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-top: 56px;
+            position: relative;
+        }
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--amber-300), var(--amber-500), var(--green-500));
+            z-index: 0;
+        }
+        .step-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(214, 211, 209, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+        .step-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .step-card p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 36px 28px;
+            border: 1px solid rgba(214, 211, 209, 0.25);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+            border-color: var(--amber-300);
+        }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+        .service-icon.free { background: var(--amber-100); }
+        .service-icon.premium { background: var(--green-100); }
+        .service-icon.tank { background: #ede9fe; }
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-size: 15px;
+            color: var(--dark-soft);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .service-card ul {
+            list-style: none;
+        }
+        .service-card ul li {
+            font-size: 14px;
+            color: var(--gray);
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green-600);
+            font-weight: 700;
+        }
+        .service-highlight {
+            background: linear-gradient(135deg, var(--green-50), var(--amber-50));
+            border: 2px solid var(--amber-400);
+        }
+
+        /* ===== SERVICE DETAIL / PROCESS DEEP DIVE ===== */
+        .process-deep { background: var(--warm-white); }
+        .deep-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        .deep-item {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid rgba(214, 211, 209, 0.15);
+            transition: transform 0.2s;
+        }
+        .deep-item:hover { transform: translateX(4px); }
+        .deep-item-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--amber-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 22px;
+        }
+        .deep-item h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .deep-item p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        .compliance-banner {
+            margin-top: 48px;
+            background: linear-gradient(135deg, var(--green-800), var(--green-700));
+            border-radius: 16px;
+            padding: 40px 48px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .compliance-banner h3 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        .compliance-banner p {
+            color: rgba(255,255,255,0.85);
+            max-width: 500px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials { background: var(--cream); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(214, 211, 209, 0.2);
+        }
+        .testimonial-stars {
+            color: var(--amber-500);
+            font-size: 18px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .testimonial-card blockquote {
+            font-size: 16px;
+            color: var(--dark-soft);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--amber-400), var(--amber-600));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .testimonial-author-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .testimonial-author-info p {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        .contact-info h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        .contact-info p {
+            color: var(--dark-soft);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .contact-detail {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+        .contact-detail-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--amber-100);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+        .contact-detail h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .contact-detail p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Form */
+        .form-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+            border: 1px solid rgba(214, 211, 209, 0.2);
+        }
+        .form-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .form-card p {
+            color: var(--gray);
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-soft);
+            margin-bottom: 6px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--gray-light);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--dark);
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--amber-500);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+        }
+        textarea { min-height: 120px; resize: vertical; }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--amber-600), var(--amber-700));
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(146, 64, 14, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.8);
+            padding: 64px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .footer-brand p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            max-width: 320px;
+        }
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+        }
+        .footer-col a {
+            display: block;
+            font-size: 15px;
+            color: rgba(255,255,255,0.65);
+            padding: 5px 0;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--amber-400); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid::before { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 64px 0; }
+            .container { padding: 0 20px; }
+
+            nav { padding: 12px 20px; }
+            .nav-links {
+                position: fixed;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 252, 245, 0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            .hamburger { display: flex; }
+
+            .hero { padding: 100px 0 60px; min-height: auto; }
+            .hero h1 { font-size: 38px; }
+            .hero p { font-size: 16px; }
+            .hero-stats { gap: 24px; flex-wrap: wrap; }
+            .hero-stat h3 { font-size: 22px; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 32px; }
+            .about-values { grid-template-columns: 1fr; }
+            .about-image-badge { position: relative; bottom: auto; left: auto; right: auto; margin-top: -20px; margin-left: 12px; margin-right: 12px; }
+
+            .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .step-card { padding: 24px 16px; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .deep-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-card { padding: 28px; }
+            .form-row { grid-template-columns: 1fr; }
+            .compliance-banner { padding: 28px; flex-direction: column; text-align: center; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            .steps-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+        }
+
+        /* ===== UTILITY ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.6s ease forwards; }
+        .fade-up-d1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-up-d2 { animation-delay: 0.2s; opacity: 0; }
+        .fade-up-d3 { animation-delay: 0.3s; opacity: 0; }
+        .fade-up-d4 { animation-delay: 0.4s; opacity: 0; }
+
+        /* Image fallback */
+        .hero-bg img[src=""] { display: none; }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="logo">
+            <div class="logo-icon">♻</div>
+            GreaseCycle Pro
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact" class="nav-cta">Get a Quote</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="hero-bg">
+        <img src="hero-oil-collection.jpg" alt="Professional waste cooking oil collection service in a commercial kitchen" onerror="this.parentElement.style.background='linear-gradient(135deg, #78350f 0%, #92400e 50%, #78350f 100%)'">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">♻ Rated 4.9 ★ by 500+ commercial kitchens</div>
+            <h1>Free Waste Cooking Oil Collection — <span>We Haul, You Save</span></h1>
+            <p>Stop worrying about clogged drains, costly fines, and greasy storage. We pick up your used cooking oil for free — on a schedule that fits your kitchen. Reliable, compliant, and completely hassle-free.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">📅 Schedule Your Pickup</a>
+                <a href="#how-it-works" class="btn btn-secondary">See How It Works →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>2M+</h3>
+                    <p>Gallons recycled annually</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>500+</h3>
+                    <p>Happy commercial kitchens</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>99%</h3>
+                    <p>On-time pickup rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+    <div class="container">
+        <div class="section-label text-center">About Us</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">Turning Kitchen Grease Into Green Energy — Since Day One</h2>
+        <p class="section-subtitle text-center mx-auto">We're the folks who make collecting cooking oil effortless so you can focus on what matters: running a great kitchen.</p>
+        
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&h=500&fit=crop" alt="GreaseCycle Pro team member servicing a restaurant's waste cooking oil container" loading="lazy">
+                <div class="about-image-badge">
+                    <span style="font-size: 24px;">♻</span>
+                    <span><strong>Zero landfill</strong> — every drop we collect goes to biodiesel and renewable energy</span>
+                </div>
+            </div>
+            <div class="about-content">
+                <h3>We handle every drop so you never deal with the mess</h3>
+                <p>GreaseCycle Pro was founded by kitchen veterans who got tired of the same old story: overflowing oil bins, nasty drain clogs, and surprise fines from the health department. We knew there had to be a better way — so we built one.</p>
+                <p>Today we partner with restaurants, hotels, food trucks, and commercial bakeries across the region. We provide free collection of waste cooking oil, handling the dirty work so our customers can keep doing what they do best. Our team shows up on time, follows every regulation to the letter, and makes sure your used oil gets turned into clean biodiesel instead of ending up in a landfill.</p>
+                
+                <div class="about-values">
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>100% Compliant</h4>
+                            <p>We handle all permits, paperwork, and environmental regulations</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>Flexible Scheduling</h4>
+                            <p>Daily, weekly, bi-weekly — whatever your kitchen needs</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>Free Equipment</h4>
+                            <p>We provide and maintain oil storage containers at no cost</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>Eco-Friendly</h4>
+                            <p>Every gallon is recycled into biodiesel — reducing emissions by up to 86%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-it-works" id="how-it-works">
+    <div class="container">
+        <div class="section-label text-center">How It Works</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 560px;">From Your Fryer to Renewable Fuel in 4 Simple Steps</h2>
+        <p class="section-subtitle text-center mx-auto">We make collecting waste cooking oil so easy you'll barely notice we were there.</p>
+        
+        <div class="steps-grid">
+            <div class="step-card fade-up">
+                <div class="step-number">1</div>
+                <h3>Reach Out</h3>
+                <p>Fill out our quick form or give us a call. Tell us about your kitchen and how much oil you go through — takes about 2 minutes.</p>
+            </div>
+            <div class="step-card fade-up fade-up-d1">
+                <div class="step-number">2</div>
+                <h3>We Set You Up</h3>
+                <p>We deliver a clean, sealed storage container — free of charge. No deposits, no contracts, no hidden fees. Just drop your cooled oil inside.</p>
+            </div>
+            <div class="step-card fade-up fade-up-d2">
+                <div class="step-number">3</div>
+                <h3>We Collect</h3>
+                <p>Our team arrives on your scheduled day, swaps your full container for a clean empty one, and hauls the used oil away. No mess, no fuss.</p>
+            </div>
+            <div class="step-card fade-up fade-up-d3">
+                <div class="step-number">4</div>
+                <h3>Oil Gets Recycled</h3>
+                <p>We deliver your waste cooking oil to local biodiesel refiners where it's transformed into clean, renewable fuel. You helped save the planet!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+    <div class="container">
+        <div class="section-label text-center">Our Services</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 520px;">Everything You Need for Hassle-Free Oil Disposal</h2>
+        <p class="section-subtitle text-center mx-auto">From free pickup to premium payouts, we've got a plan for kitchens of every size.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon free">🛢️</div>
+                <h3>Free Collection</h3>
+                <p>Our core service — and it costs you nothing. We pick up your waste cooking oil on a schedule that works for your kitchen. No fees, no contracts, no surprises.</p>
+                <ul>
+                    <li>Zero-cost pickup — always</li>
+                    <li>Flexible frequency (daily to monthly)</li>
+                    <li>Free container provided & maintained</li>
+                    <li>Covers restaurants, hotels, bakeries, food trucks</li>
+                    <li>Fully licensed and insured</li>
+                </ul>
+            </div>
+            <div class="service-card service-highlight">
+                <div class="service-icon premium">💰</div>
+                <h3>Premium Payouts</h3>
+                <p>High-volume kitchens earn per-gallon revenue share. The more you produce, the more you earn. We track every drop and send you a quarterly check.</p>
+                <ul>
+                    <li>Competitive per-gallon rates</li>
+                    <li>Volume-based bonuses</li>
+                    <li>Quarterly payouts with detailed reports</li>
+                    <li>Ideal for chains, hotels, and rendering plants</li>
+                    <li>No minimum volume commitment</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon tank">📦</div>
+                <h3>Tank & Equipment Rental</h3>
+                <p>Large-volume clients can lease our heavy-duty on-site storage tanks. Includes installation, maintenance, and scheduled pump-outs — everything included.</p>
+                <ul>
+                    <li>55 to 330 gallon storage tanks available</li>
+                    <li>Professional installation & setup</li>
+                    <li>Regular maintenance & inspections</li>
+                    <li>Automatic pump-out scheduling</li>
+                    <li>Discounted rates for long-term leases</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Service Area -->
+        <div style="text-align: center; margin-top: 32px; padding: 20px; background: var(--amber-50); border-radius: 12px; border: 1px solid var(--amber-200);">
+            <p style="font-size: 16px; color: var(--amber-800);"><strong>📍 Service Area:</strong> Serving the greater metropolitan area and surrounding counties. Call to check availability in your location — we're expanding fast!</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS DEEP DIVE / SERVICE DETAIL ===== -->
+<section class="process-deep" id="service-detail">
+    <div class="container">
+        <div class="section-label text-center">Why GreaseCycle Pro?</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">The Smarter Way to Handle Waste Cooking Oil</h2>
+        <p class="section-subtitle text-center mx-auto">We're not just collecting cooking oil — we're building a cleaner, greener food service industry. Here's what sets us apart.</p>
+        
+        <div class="deep-grid">
+            <div class="deep-item">
+                <div class="deep-item-icon">🕐</div>
+                <div>
+                    <h4>Schedule That Fits You</h4>
+                    <p>Early morning, late night, weekends — we work around your kitchen's rhythm. Set a recurring pickup or call us when you're full. You're in control.</p>
+                </div>
+            </div>
+            <div class="deep-item">
+                <div class="deep-item-icon">📋</div>
+                <div>
+                    <h4>Full Compliance Coverage</h4>
+                    <p>We handle all the paperwork, permits, and environmental regulations. No fines, no citations, no worries. You get a compliance certificate with every pickup.</p>
+                </div>
+            </div>
+            <div class="deep-item">
+                <div class="deep-item-icon">🌱</div>
+                <div>
+                    <h4>Real Environmental Impact</h4>
+                    <p>Every gallon we collect produces roughly one gallon of biodiesel — cutting CO₂ emissions by 86% compared to petroleum diesel. Recycling cooking oil is one of the easiest ways your business can go green.</p>
+                </div>
+            </div>
+            <div class="deep-item">
+                <div class="deep-item-icon">🧹</div>
+                <div>
+                    <h4>No Mess, No Stress</h4>
+                    <p>Our spill-proof containers and trained technicians mean zero mess, zero odor, and zero disruption to your operation. We leave your kitchen cleaner than we found it.</p>
+                </div>
+            </div>
+            <div class="deep-item">
+                <div class="deep-item-icon">📊</div>
+                <div>
+                    <h4>Detailed Reporting</h4>
+                    <p>Every pickup comes with a digital receipt showing gallons collected, date, and compliance info. High-volume partners get monthly sustainability reports to share with stakeholders.</p>
+                </div>
+            </div>
+            <div class="deep-item">
+                <div class="deep-item-icon">🤝</div>
+                <div>
+                    <h4>Local & Independent</h4>
+                    <p>We're a local business serving local businesses. When you choose GreaseCycle Pro, you're supporting a regional circular economy — not sending your oil to some faceless corporation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="compliance-banner">
+            <div>
+                <h3>✅ Fully Licensed, Bonded & Insured</h3>
+                <p>We meet or exceed all federal, state, and local regulations for waste cooking oil transport and recycling. Ask about our compliance guarantee.</p>
+            </div>
+            <a href="#contact" class="btn" style="background: white; color: var(--green-800); flex-shrink: 0;">Get Your Compliance Kit →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-label text-center">Testimonials</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 540px;">Trusted by 500+ Kitchens Across the Region</h2>
+        <p class="section-subtitle text-center mx-auto">Don't take our word for it — hear from the chefs, owners, and managers who rely on us every day.</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"We go through about 40 gallons of fryer oil a week at our two locations. GreaseCycle Pro handles the collecting cooking oil for us without any hassle. They show up like clockwork, swap our bins, and we never think about it again. The quarterly payout check is a nice bonus too."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MR</div>
+                    <div class="testimonial-author-info">
+                        <h4>Mike R.</h4>
+                        <p>Owner, The Burger Shack (2 locations)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"Before GreaseCycle Pro, dealing with used oil was my least favorite part of the job. The smell, the mess, worrying about the health inspector finding a problem. Now I just fill their container and they magically make it disappear. Best decision I've made for my kitchen — hands down."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SL</div>
+                    <div class="testimonial-author-info">
+                        <h4>Sarah L.</h4>
+                        <p>Head Chef, Bella Vista Bistro</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"We run a hotel with three restaurants and a banquet kitchen — that's a lot of waste oil. GreaseCycle Pro's tank rental program was a game changer. The 330-gallon tank takes all the guesswork out, and their team handles everything. Plus, knowing our oil is being recycled into biodiesel helps us hit our sustainability goals."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JD</div>
+                    <div class="testimonial-author-info">
+                        <h4>James D.</h4>
+                        <p>General Manager, The Grand Plaza Hotel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT / GET A QUOTE ===== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-label text-center">Get a Quote</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 500px;">Ready for Free Waste Oil Collection? Let's Talk.</h2>
+        <p class="section-subtitle text-center mx-auto">Fill out the form and we'll get back to you within 24 hours with a custom proposal. Or give us a call — we love talking to kitchen people.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Let's Make Your Kitchen Greener</h3>
+                <p>Whether you're a small food truck or a major hotel chain, we've got a waste cooking oil solution that works for you. Free collection, competitive payouts, and zero headaches — that's the GreaseCycle Pro promise.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">📞</div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>(555) 123-GREASE (47327)</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@greasecyclepro.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">📍</div>
+                        <div>
+                            <h4>Service Area</h4>
+                            <p>Metro area and surrounding counties</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">🕐</div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon–Sat: 6 AM – 8 PM | 24/7 emergency service</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 32px; padding: 20px; background: var(--green-50); border-radius: 12px; border-left: 4px solid var(--green-600);">
+                    <p style="font-size: 14px; color: var(--green-800);"><strong>♻ Did you know?</strong> Recycling just 1 gallon of cooking oil produces ~1 gallon of biodiesel and keeps 20+ pounds of CO₂ out of the atmosphere. Your kitchen can make a real difference.</p>
+                </div>
+            </div>
+            
+            <div class="form-card">
+                <h3>Get Your Free Quote</h3>
+                <p>No obligations, no sales pitch — just a straightforward conversation about how we can help.</p>
+                <form id="quoteForm" onsubmit="return handleForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="e.g. Sarah Johnson">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Name *</label>
+                            <input type="text" id="business" name="business" required placeholder="e.g. Bella's Kitchen">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="you@kitchen.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="volume">Estimated Weekly Oil Volume</label>
+                        <select id="volume" name="volume">
+                            <option value="">— Select approximate volume —</option>
+                            <option value="under-5">Under 5 gallons/week</option>
+                            <option value="5-15">5–15 gallons/week</option>
+                            <option value="15-50">15–50 gallons/week</option>
+                            <option value="50-100">50–100 gallons/week</option>
+                            <option value="100-plus">100+ gallons/week</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Kitchen</label>
+                        <textarea id="message" name="message" placeholder="Type of cuisine, number of fryers, any special requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">📬 Send Me a Quote</button>
+                    <p style="text-align: center; font-size: 13px; color: var(--gray); margin-top: 12px;">We respect your privacy. No spam, ever. Just a quote.</p>
+                </form>
+                <div id="formSuccess" style="display:none; text-align:center; padding:20px;">
+                    <span style="font-size: 48px;">✅</span>
+                    <h4 style="margin-top: 16px; color: var(--green-700);">Thanks! We'll Be in Touch</h4>
+                    <p style="color: var(--gray);">We typically respond within 24 hours. In the meantime, feel free to call us directly at (555) 123-GREASE.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>♻ GreaseCycle Pro</h3>
+                <p>Free waste cooking oil collection for commercial kitchens. We haul away your used oil, handle all the paperwork, and recycle every drop into clean biodiesel. No clogs, no fines, no hassle — just a cleaner kitchen and a greener planet.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Get a Quote</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#services">Free Oil Collection</a>
+                <a href="#services">Premium Payouts</a>
+                <a href="#services">Tank Rental</a>
+                <a href="#service-detail">Compliance & Reporting</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:+155512347327">(555) 123-GREASE</a>
+                <a href="mailto:hello@greasecyclepro.com">hello@greasecyclepro.com</a>
+                <a href="#">Service Area Map</a>
+                <a href="#">Careers</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 GreaseCycle Pro. All rights reserved.</span>
+            <span>Proudly recycling cooking oil into clean energy ♻</span>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+    });
+    
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        });
+    });
+    
+    // Navbar shadow on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    
+    // Form handler
+    async function handleForm(e) {
+        e.preventDefault();
+        
+        const form = document.getElementById('quoteForm');
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        const name = data.name.trim();
+        const business = data.business.trim();
+        const email = data.email.trim();
+        
+        if (!name || !business || !email) {
+            alert('Please fill in all required fields (name, business, email).');
+            return false;
+        }
+        
+        try {
+            const response = await fetch('/api/lead', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                document.getElementById('quoteForm').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+            } else {
+                alert('Error: ' + (result.error || 'Failed to submit form. Please try again.'));
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Could not connect to the server. Please try again later.');
+        }
+        
+        return false;
+    }
+</script>
+
+</body>
+</html>
