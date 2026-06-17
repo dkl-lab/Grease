@@ -6,12 +6,18 @@
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["waste cooking oil", "oil collection", "grease recycling", "biodiesel"],
+  "keywords": [
+    "waste cooking oil",
+    "oil collection",
+    "grease recycling",
+    "biodiesel"
+  ],
   "author": "GreaseCycle Pro",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "nodemailer": "^9.0.1"
   }
 }
