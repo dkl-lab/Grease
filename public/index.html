@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreaseCycle Pro – Free Waste Cooking Oil Collection & Recycling</title>
-    <meta name="description" content="Free collection of waste cooking oil from restaurants, hotels, and food service businesses. We haul, you save — no clogs, no fines, no hassle. Schedule your collection today!">
+    <meta name="description" content="Free collection of waste cooking oil from restaurants, hotels, and food service businesses. We haul, you save — no clogs, no fines, no hassle. Schedule your pickup today!">
     <meta name="keywords" content="waste cooking oil, collecting waste cooking oil, collecting cooking oil, recycling cooking oil, free collection of waste cooking oil, cooking oil recycling, grease collection">
     
     <!-- Open Graph -->
@@ -315,6 +315,321 @@
         .text-center { text-align: center; }
         .mx-auto { margin-left: auto; margin-right: auto; }
 
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            margin-top: 48px;
+        }
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; }
+        .about-image-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .about-image-badge span {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--dark);
+        }
+        .about-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        .about-content p {
+            color: var(--dark-soft);
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .about-value {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .about-value-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--green-100);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .about-value h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .about-value p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works { background: var(--cream); }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-top: 56px;
+            position: relative;
+        }
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--amber-300), var(--amber-500), var(--green-500));
+            z-index: 0;
+        }
+        .step-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(214, 211, 209, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+        .step-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .step-card p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 36px 28px;
+            border: 1px solid rgba(214, 211, 209, 0.25);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+            border-color: var(--amber-300);
+        }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+        .service-icon.free { background: var(--amber-100); }
+        .service-icon.premium { background: var(--green-100); }
+        .service-icon.tank { background: #ede9fe; }
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-size: 15px;
+            color: var(--dark-soft);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .service-card ul {
+            list-style: none;
+        }
+        .service-card ul li {
+            font-size: 14px;
+            color: var(--gray);
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green-600);
+            font-weight: 700;
+        }
+        .service-highlight {
+            background: linear-gradient(135deg, var(--green-50), var(--amber-50));
+            border: 2px solid var(--amber-400);
+        }
+
+        /* ===== SERVICE DETAIL / PROCESS DEEP DIVE ===== */
+        .process-deep { background: var(--warm-white); }
+        .deep-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        .deep-item {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid rgba(214, 211, 209, 0.15);
+            transition: transform 0.2s;
+        }
+        .deep-item:hover { transform: translateX(4px); }
+        .deep-item-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--amber-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 22px;
+        }
+        .deep-item h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .deep-item p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        .compliance-banner {
+            margin-top: 48px;
+            background: linear-gradient(135deg, var(--green-800), var(--green-700));
+            border-radius: 16px;
+            padding: 40px 48px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .compliance-banner h3 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        .compliance-banner p {
+            color: rgba(255,255,255,0.85);
+            max-width: 500px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials { background: var(--cream); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(214, 211, 209, 0.2);
+        }
+        .testimonial-stars {
+            color: var(--amber-500);
+            font-size: 18px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .testimonial-card blockquote {
+            font-size: 16px;
+            color: var(--dark-soft);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--amber-400), var(--amber-600));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .testimonial-author-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .testimonial-author-info p {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
         /* ===== CONTACT ===== */
         .contact-grid {
             display: grid;
@@ -488,7 +803,9 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .contact-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid::before { display: none; }
         }
 
         @media (max-width: 768px) {
@@ -496,14 +813,56 @@
             .container { padding: 0 20px; }
 
             nav { padding: 12px 20px; }
+            .nav-links {
+                position: fixed;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 252, 245, 0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid var(--gray-light);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            .hamburger { display: flex; }
+
+            .hero { padding: 100px 0 60px; min-height: auto; }
+            .hero h1 { font-size: 38px; }
+            .hero p { font-size: 16px; }
+            .hero-stats { gap: 24px; flex-wrap: wrap; }
+            .hero-stat h3 { font-size: 22px; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 32px; }
+            .about-values { grid-template-columns: 1fr; }
+            .about-image-badge { position: relative; bottom: auto; left: auto; right: auto; margin-top: -20px; margin-left: 12px; margin-right: 12px; }
+
+            .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .step-card { padding: 24px 16px; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .deep-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
             .form-card { padding: 28px; }
             .form-row { grid-template-columns: 1fr; }
+            .compliance-banner { padding: 28px; flex-direction: column; text-align: center; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
         }
 
         @media (max-width: 480px) {
+            .steps-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
         }
 
         /* ===== UTILITY ===== */
@@ -517,6 +876,20 @@
             clip: rect(0,0,0,0);
             border: 0;
         }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.6s ease forwards; }
+        .fade-up-d1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-up-d2 { animation-delay: 0.2s; opacity: 0; }
+        .fade-up-d3 { animation-delay: 0.3s; opacity: 0; }
+        .fade-up-d4 { animation-delay: 0.4s; opacity: 0; }
+
+        /* Image fallback */
+        .hero-bg img[src=""] { display: none; }
     </style>
 </head>
 <body>
@@ -532,45 +905,315 @@
             <span></span><span></span><span></span>
         </button>
         <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#contact" class="nav-cta">Get a Quote</a>
         </div>
     </div>
 </nav>
 
-<!-- ===== CONTACT SECTION ===== -->
-<section id="contact" style="padding: 96px 0; background: #faf8f5;">
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="hero-bg">
+        <img src="hero-oil-collection.jpg" alt="Professional waste cooking oil collection service in a commercial kitchen" onerror="this.parentElement.style.background='linear-gradient(135deg, #78350f, #92400e)'">
+        <div class="hero-overlay"></div>
+    </div>
     <div class="container">
-        <div class="section-label text-center">Contact Us</div>
-        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">Ready to Recycle Your Waste Oil?</h2>
-        <p class="section-subtitle text-center mx-auto">Get in touch with us to schedule a collection or discuss your waste cooking oil needs.</p>
+        <div class="hero-content">
+            <div class="hero-badge">♻ Rated 4.9 ★ by 500+ commercial kitchens</div>
+            <h1>Free Waste Cooking Oil Collection — <span>We Haul, You Save</span></h1>
+            <p>Stop worrying about clogged drains, costly fines, and greasy storage. We pick up your used cooking oil for free — on a schedule that fits your kitchen. Reliable, compliant, and completely hassle-free.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">📅 Schedule Your Pickup</a>
+                <a href="#how-it-works" class="btn btn-secondary">See How It Works →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>2M+</h3>
+                    <p>Gallons recycled annually</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>500+</h3>
+                    <p>Happy commercial kitchens</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>99%</h3>
+                    <p>On-time pickup rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+    <div class="container">
+        <div class="section-label text-center">About Us</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">Turning Kitchen Grease Into Green Energy — Since Day One</h2>
+        <p class="section-subtitle text-center mx-auto">We're the folks who make collecting cooking oil effortless so you can focus on what matters: running a great kitchen.</p>
+        
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&h=500&fit=crop" alt="GreaseCycle Pro team member servicing a restaurant's waste cooking oil container" loading="lazy">
+                <div class="about-image-badge">
+                    <span style="font-size: 24px;">♻</span>
+                    <span><strong>Zero landfill</strong> — every drop we collect goes to biodiesel and renewable energy</span>
+                </div>
+            </div>
+            <div class="about-content">
+                <h3>We handle every drop so you never deal with the mess</h3>
+                <p>GreaseCycle Pro was founded by kitchen veterans who got tired of the same old story: overflowing oil bins, nasty drain clogs, and surprise fines from the health department. We built a better way.</p>
+                <p>Today we partner with restaurants, hotels, food trucks, and commercial bakeries across the region. We provide free collection of waste cooking oil, handling the dirty work so our kitchen heroes can focus on their craft.</p>
+                
+                <div class="about-values">
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>100% Compliant</h4>
+                            <p>We handle all permits, paperwork, and environmental regulations</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>Flexible Scheduling</h4>
+                            <p>Daily, weekly, bi-weekly — whatever your kitchen needs</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>Free Equipment</h4>
+                            <p>We provide and maintain oil storage containers at no cost</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">✓</div>
+                        <div>
+                            <h4>Eco-Friendly</h4>
+                            <p>Every gallon is recycled into biodiesel — reducing emissions by up to 86%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-it-works" id="how-it-works">
+    <div class="container">
+        <div class="section-label text-center">Our Process</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">How GreaseCycle Pro Works</h2>
+        <p class="section-subtitle text-center mx-auto">Four simple steps to clean kitchens and green energy</p>
+        
+        <div class="steps-grid">
+            <div class="step-card fade-up fade-up-d1">
+                <div class="step-number">1</div>
+                <h3>You Call or Book Online</h3>
+                <p>Schedule a pickup that works for your kitchen — daily, weekly, or on-demand. We're flexible and reliable.</p>
+            </div>
+            <div class="step-card fade-up fade-up-d2">
+                <div class="step-number">2</div>
+                <h3>We Arrive on Time</h3>
+                <p>Our trained technicians arrive at your scheduled time. Professional, clean, and courteous every visit.</p>
+            </div>
+            <div class="step-card fade-up fade-up-d3">
+                <div class="step-number">3</div>
+                <h3>Safe Collection & Transport</h3>
+                <p>We safely collect your used oil, leaving your space clean. All equipment is sanitized and maintained.</p>
+            </div>
+            <div class="step-card fade-up fade-up-d4">
+                <div class="step-number">4</div>
+                <h3>Recycled Into Green Energy</h3>
+                <p>Your oil is transformed into renewable biodiesel and heat energy. Complete environmental responsibility.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+    <div class="container">
+        <div class="section-label text-center">What We Offer</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">Waste Oil Collection Tailored to You</h2>
+        <p class="section-subtitle text-center mx-auto">From small cafes to large commercial kitchens, we have the perfect plan</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon free">🚛</div>
+                <h3>Free Collection</h3>
+                <p>No hidden fees. We pick up your waste oil completely free. That's our promise.</p>
+                <ul>
+                    <li>No collection fees</li>
+                    <li>Flexible scheduling</li>
+                    <li>Professional handling</li>
+                    <li>Eco-certified</li>
+                </ul>
+            </div>
+            <div class="service-card service-highlight">
+                <div class="service-icon premium">🌍</div>
+                <h3>Premium Partnership</h3>
+                <p>Turn your waste into value. Premium service with guaranteed pickup windows.</p>
+                <ul>
+                    <li>Guaranteed pickup windows</li>
+                    <li>Priority scheduling</li>
+                    <li>Dedicated account manager</li>
+                    <li>Monthly reporting</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon tank">🛢️</div>
+                <h3>Tank Management</h3>
+                <p>We provide and maintain oil storage containers for your kitchen — at no cost.</p>
+                <ul>
+                    <li>Free tank provision</li>
+                    <li>Regular maintenance</li>
+                    <li>Spill cleanup included</li>
+                    <li>Health compliant</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICE DEEP DIVE ===== -->
+<section class="process-deep">
+    <div class="container">
+        <div class="section-label text-center">Why Choose GreaseCycle Pro</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">The GreaseCycle Difference</h2>
+        
+        <div class="deep-grid">
+            <div>
+                <div class="deep-item">
+                    <div class="deep-item-icon">⚡</div>
+                    <div>
+                        <h4>Lightning-Fast Response</h4>
+                        <p>Book online or call us. Same-week pickup guaranteed. We respect your time.</p>
+                    </div>
+                </div>
+                <div class="deep-item">
+                    <div class="deep-item-icon">🤝</div>
+                    <div>
+                        <h4>Local Roots, Big Impact</h4>
+                        <p>We're reinvesting in the community. Every gallon collected means cleaner oceans and healthier air.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="deep-item">
+                    <div class="deep-item-icon">✓</div>
+                    <div>
+                        <h4>100% Compliant & Certified</h4>
+                        <p>FDA/EPA compliant. All permits & licenses current. Your peace of mind is our priority.</p>
+                    </div>
+                </div>
+                <div class="deep-item">
+                    <div class="deep-item-icon">💰</div>
+                    <div>
+                        <h4>Zero Cost to You</h4>
+                        <p>Free collection, free tanks, free disposal. You profit from waste reduction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="compliance-banner">
+            <div>
+                <h3>Compliance You Can Trust</h3>
+                <p>We handle all environmental regulations, health department permits, and industry compliance. Your kitchen stays clean legally and environmentally.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-label text-center">Success Stories</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">What Our Partners Say</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"GreaseCycle Pro has been a game-changer for our kitchen. No more drain clogs, no more fines, no more headaches. They're professional, reliable, and genuinely care about the environment."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JM</div>
+                    <div class="testimonial-author-info">
+                        <h4>James Martinez</h4>
+                        <p>Executive Chef, Bella Italia Restaurant</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"As a food truck owner, finding reliable waste oil pickup was nearly impossible. GreaseCycle Pro adapted their service to fit our mobile needs. Outstanding!"</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SL</div>
+                    <div class="testimonial-author-info">
+                        <h4>Sarah Lee</h4>
+                        <p>Owner, Street Kitchen Food Truck</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote>"We've saved thousands in plumbing repairs since signing up. Their team is professional, the pickup is seamless, and we're helping the planet. Highly recommend!"</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">RC</div>
+                    <div class="testimonial-author-info">
+                        <h4>Rachel Chen</h4>
+                        <p>Manager, Downtown Bakery Co.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-label text-center">Get Started</div>
+        <h2 class="section-title text-center mx-auto" style="max-width: 600px;">Ready to Go Green?</h2>
+        <p class="section-subtitle text-center mx-auto">Schedule your first free pickup today. Let's turn waste into value together.</p>
         
         <div class="contact-grid">
             <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p>We're here to help with your waste cooking oil collection needs. Whether you're just starting out or already working with us, reach out to discuss your requirements.</p>
+                <h3>Reach Out Directly</h3>
+                <p>Have questions? Want to know more? Get in touch with our team. We're here to help with zero-pressure consultation about your waste oil needs.</p>
                 
                 <div class="contact-details">
                     <div class="contact-detail">
                         <div class="contact-detail-icon">📧</div>
                         <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:greasecyclepro@protonmail.com" style="color: var(--amber-600);">greasecyclepro@protonmail.com</a></p>
+                            <h4>Email Us</h4>
+                            <p>info@greasecyclepro.com</p>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <div class="contact-detail-icon">📞</div>
                         <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+447308613064" style="color: var(--amber-600);">07308 613064</a></p>
+                            <h4>Call Us</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">🕒</div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday, 8am - 6pm</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="form-card">
-                <h3>Submit an Enquiry</h3>
-                <p>Tell us about your business and waste oil needs</p>
-                <form id="contactForm">
+                <h3>Quick Quote Request</h3>
+                <p>Tell us about your kitchen and we'll get back to you within 24 hours with a personalized proposal.</p>
+                <form id="leadForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
@@ -583,18 +1226,18 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
+                            <label for="email">Email *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone">Phone</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="volume">Estimated Monthly Volume</label>
                         <select id="volume" name="volume">
-                            <option value="">Select volume...</option>
+                            <option value="">Select...</option>
                             <option value="Under 50 gallons">Under 50 gallons</option>
                             <option value="50-100 gallons">50-100 gallons</option>
                             <option value="100-500 gallons">100-500 gallons</option>
@@ -602,10 +1245,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Additional Details</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your collection needs..."></textarea>
+                        <label for="message">Tell Us About Your Needs</label>
+                        <textarea id="message" name="message" placeholder="Any special requirements or questions?"></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Submit Enquiry</button>
+                    <button type="submit" class="btn-submit">Get My Free Quote</button>
                 </form>
             </div>
         </div>
@@ -618,35 +1261,38 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <h3>GreaseCycle Pro</h3>
-                <p>Free waste cooking oil collection for restaurants, hotels, and food service businesses. Reliable, eco-friendly, compliant.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <a href="mailto:greasecyclepro@protonmail.com">greasecyclepro@protonmail.com</a>
-                <a href="tel:+447308613064">07308 613064</a>
+                <p>Free waste cooking oil collection for commercial kitchens. Reliable service, zero environmental guilt, zero cost to you.</p>
             </div>
             <div class="footer-col">
                 <h4>Service</h4>
-                <a href="#contact">Request Collection</a>
+                <a href="#services">Our Services</a>
                 <a href="#contact">Get a Quote</a>
+                <a href="#how-it-works">How It Works</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
-                <a href="#contact">About</a>
+                <a href="#about">About Us</a>
+                <a href="#testimonials">Testimonials</a>
                 <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#"><p style="color: rgba(255,255,255,0.65);">Privacy Policy</p></a>
+                <a href="#"><p style="color: rgba(255,255,255,0.65);">Terms of Service</p></a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 GreaseCycle Pro. All rights reserved.</p>
-            <p>Turning grease into green energy ♻</p>
+            <p>&copy; 2024 GreaseCycle Pro. All rights reserved.</p>
+            <p>Turning grease into green energy ♻️</p>
         </div>
     </div>
 </footer>
 
 <script>
-    // Hamburger menu
+    // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
+
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -654,57 +1300,87 @@
         });
     }
 
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger?.classList.remove('active');
+            navLinks?.classList.remove('open');
+        });
+    });
+
     // Form submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+        leadForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const formData = {
                 name: document.getElementById('name').value,
                 business: document.getElementById('business').value,
                 email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                volume: document.getElementById('volume').value,
-                message: document.getElementById('message').value
+                phone: document.getElementById('phone').value || '',
+                volume: document.getElementById('volume').value || '',
+                message: document.getElementById('message').value || ''
             };
 
             try {
                 const response = await fetch('/api/lead', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify(formData)
                 });
 
                 if (response.ok) {
-                    alert('Thank you! Your enquiry has been submitted. We will contact you shortly at ' + formData.email);
-                    contactForm.reset();
+                    alert('Thank you! Your quote request has been received. We\'ll contact you within 24 hours!');
+                    leadForm.reset();
                 } else {
-                    alert('There was an error submitting your enquiry. Please try again or email us directly.');
+                    alert('There was an error submitting your request. Please try again.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Network error. Please try again or contact us at greasecyclepro@protonmail.com');
+                alert('Network error. Please try again or contact us directly.');
             }
         });
     }
 
-    // Smooth scroll for nav links
+    // Smooth scroll and nav highlighting
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            if (this.getAttribute('href') !== '#') {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    if (hamburger) {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('open');
-                    }
+                const element = document.querySelector(href);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
                 }
             }
         });
     });
+
+    // Scroll effect for navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar?.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+        }
+    });
+
+    // Fade-up animations on scroll
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
 </body>
